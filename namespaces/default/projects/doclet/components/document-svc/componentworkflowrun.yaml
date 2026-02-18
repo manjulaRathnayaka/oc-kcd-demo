@@ -1,0 +1,23 @@
+apiVersion: openchoreo.dev/v1alpha1
+kind: ComponentWorkflowRun
+metadata:
+  name: document-svc-build
+  namespace: default
+spec:
+  owner:
+    projectName: doclet
+    componentName: document-svc
+  workflow:
+    name: docker-gitops-release
+    systemParameters:
+      repository:
+        url: https://github.com/openchoreo/sample-workloads.git
+        revision:
+          branch: main
+          commit: "6e764e74894cafcf4b68dfa2c77787a227a7fa3b"
+        appPath: /project-doclet-app/service-go-document
+    parameters:
+      docker:
+        context: /project-doclet-app/service-go-document
+        filePath: /project-doclet-app/service-go-document/Dockerfile
+      workloadDescriptorPath: workload.yaml
