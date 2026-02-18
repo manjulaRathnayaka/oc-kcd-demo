@@ -11,7 +11,7 @@ spec:
   autoBuild: true
 
   workflow:
-    name: docker-gitops-release
+    name: docker
     systemParameters:
       repository:
         url: "https://github.com/openchoreo/sample-workloads.git"
@@ -22,7 +22,6 @@ spec:
       docker:
         context: "/project-doclet-app/webapp-react-frontend"
         filePath: "/project-doclet-app/webapp-react-frontend/Dockerfile"
-      workloadDescriptorPath: "workload.yaml"
 
   parameters:
     replicas: 1

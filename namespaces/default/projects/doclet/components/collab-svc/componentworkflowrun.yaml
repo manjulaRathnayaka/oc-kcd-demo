@@ -8,7 +8,7 @@ spec:
     projectName: doclet
     componentName: collab-svc
   workflow:
-    name: docker-gitops-release
+    name: docker
     systemParameters:
       repository:
         url: https://github.com/openchoreo/sample-workloads.git
@@ -20,4 +20,3 @@ spec:
       docker:
         context: /project-doclet-app/service-go-collab
         filePath: /project-doclet-app/service-go-collab/Dockerfile
-      workloadDescriptorPath: workload.yaml
